@@ -1,0 +1,23 @@
+<div>
+  <div class="main-auth-page">
+    <img class="auth-logo" src="assets/logo.svg">
+
+    <form>
+      <div class="field">
+        <span class="field">Email</span>
+        <input class="field" type="email" required [(ngModel)]="recoveryForm.email" [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <input class="auth-button" type="submit" (click)="recovery()" value="Recovery">
+    </form>
+
+    <div style="display: inline-flex; align-items: center; width: 100%;">
+      <div class="remember-and-forgot" style="margin: auto">
+        <p>Already have an account?</p>
+        <a style="padding-left: 10px;" routerLink="../login">Sign in</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+

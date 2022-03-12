@@ -1,0 +1,37 @@
+<div>
+  <div class="main-auth-page">
+    <img class="auth-logo" src="assets/logo.svg">
+
+    <form>
+      <div class="field">
+        <span class="field">Username or email</span>
+        <input class="field" type="text" required title="Username or email" [(ngModel)]="authForm.login" [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div class="field">
+        <span class="field">Password</span>
+        <div style="display: flex; height: 48px;">
+          <input class="field" required [type]="getPasswordType()" title="Password" [(ngModel)]="authForm.password" [ngModelOptions]="{standalone: true}">
+          <img (click)="changeEye()" class="pass-eye" [src]="getEye()">
+        </div>
+      </div>
+      <p class="error-pane">{{errorMsg}}</p>
+      <div class="remember-and-forgot">
+        <input type="checkbox" [(ngModel)]="isRememberAuth" [ngModelOptions]="{standalone: true}">
+        <p>Remember me</p>
+        <a style="margin-left: 46px; align-items: center;" routerLink="../recovery">Forgot your password?</a>
+      </div>
+
+      <input class="auth-button" type="submit" (click)="auth()" value="Sign In">
+    </form>
+
+    <div style="display: inline-flex; align-items: center; width: 100%;">
+      <div class="remember-and-forgot" style="margin: auto">
+        <p>Don’t have an account yet?</p>
+        <a style="padding-left: 12px;" routerLink="../register">Sign up</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
